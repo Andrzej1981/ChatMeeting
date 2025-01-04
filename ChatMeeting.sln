@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.API", "ChatMeeting\ChatMeeting.API.csproj", "{07E2B2F0-609D-442A-879E-247575FF8487}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F4D7A2B-583F-4985-B5E2-241CE699B16B} = {5F4D7A2B-583F-4985-B5E2-241CE699B16B}
+		{A3A46246-F894-4D05-9D99-13B44804E9B2} = {A3A46246-F894-4D05-9D99-13B44804E9B2}
+		{C45CF472-2C02-4011-9270-946F7EE240F0} = {C45CF472-2C02-4011-9270-946F7EE240F0}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMeeting.Core.Domain", "ChatMeeting.Core.Domain\ChatMeeting.Core.Domain.csproj", "{C45CF472-2C02-4011-9270-946F7EE240F0}"
 EndProject
