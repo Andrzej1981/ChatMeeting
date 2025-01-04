@@ -19,11 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChatMeeting.Core.Application\ChatMeeting.Core.Application.csproj" />
     <ProjectReference Include="..\ChatMeeting.Core.Domain\ChatMeeting.Core.Domain.csproj" />
-  </ItemGroup>
+	<ProjectReference Include="..\ChatMeeting.Infrastructure\ChatMeeting.Infrastructure.csproj" />
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

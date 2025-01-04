@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using ChatMeeting.API;
 using ChatMeeting.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +9,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddConfiguration(configuration);
+builder.Services.AddServices();
+
+var orgin = configuration.GetValue<string>("Orgin") ?? throw new NullReferenceException("Empty Orgin");
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder =>
+        {
+            builder.WithOrigins(orgin)
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .SetIsOriginAllowed((host) => true)
+            .AllowCredentials();
+        });
+});
 
 var app = builder.Build();
 
@@ -21,6 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
